@@ -1,6 +1,8 @@
+use std::io::Write;
+
 pub struct PrimeIterator {
     current: usize,
-    data: std::vec::Vec<bool>,
+    data: Vec<bool>,
 }
 
 fn new_prime_iterator(size: usize) -> PrimeIterator {
@@ -30,9 +32,18 @@ impl std::iter::Iterator for PrimeIterator {
 }
 
 fn main() {
-    let iter = new_prime_iterator(10000);
+    let stdout = std::io::stdout();
+    let mut handle = std::io::BufWriter::new(stdout);
+
+    let args: Vec<String> = std::env::args().collect();
+    let mut size = 100;
+    if args.len() > 1 {
+        size = args[1].parse().unwrap();
+    }
+
+    let iter = new_prime_iterator(size);
 
     for prime in iter {
-        println!("{p}", p = prime);
+        writeln!(handle, "{p}", p = prime);
     }
 }
