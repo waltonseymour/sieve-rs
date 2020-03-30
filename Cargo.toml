@@ -1,6 +1,6 @@
 [package]
-name = "primes"
-version = "0.1.0"
+name = "sieve"
+version = "1.0.0"
 authors = ["waltonseymour <walton.l.seymour@gmail.com>"]
 edition = "2018"
 
