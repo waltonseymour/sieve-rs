@@ -5,10 +5,12 @@ pub struct PrimeIterator {
     data: Vec<bool>,
 }
 
-fn new_prime_iterator(size: usize) -> PrimeIterator {
-    PrimeIterator {
-        current: 2,
-        data: vec![false; size],
+impl PrimeIterator {
+    fn from_size(size: usize) -> PrimeIterator {
+        PrimeIterator {
+            current: 2,
+            data: vec![false; size],
+        }
     }
 }
 
@@ -41,7 +43,7 @@ fn main() {
         size = args[1].parse().unwrap();
     }
 
-    let iter = new_prime_iterator(size);
+    let iter = PrimeIterator::from_size(size);
 
     for prime in iter {
         writeln!(handle, "{p}", p = prime);

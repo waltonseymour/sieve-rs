@@ -1,6 +1,6 @@
 [package]
 name = "sieve"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["waltonseymour <walton.l.seymour@gmail.com>"]
 edition = "2018"
 
