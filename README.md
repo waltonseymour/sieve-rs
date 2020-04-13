@@ -4,7 +4,7 @@ Sieve of Eratosthenes in Rust
 
 ## Install
 ```bash
-cargo install --git https://github.com/waltonseymour/sieve-rust
+cargo install --git https://github.com/waltonseymour/sieve-rs
 ```
 
 ## Usage
